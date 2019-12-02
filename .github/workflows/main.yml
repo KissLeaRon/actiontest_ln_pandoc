@@ -18,9 +18,9 @@ jobs:
       - run: ls paper/ -a
       - uses: sakura067m/md2pdf@master
         with:
-          name: $GITHUB_WORKSPACE/paper/index.md
-          output: $GITHUB_WORKSPACE/output/output.pdf
-          metadata: $GITHUB_WORKSPACE/paper/_output.yaml
+          name: ${GITHUB_WORKSPACE}/paper/index.md
+          output: ${GITHUB_WORKSPACE}/output/output.pdf
+          metadata: ${GITHUB_WORKSPACE}/paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
           name: output

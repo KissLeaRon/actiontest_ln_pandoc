@@ -2,8 +2,8 @@ name: Document Conversion
 
 on:
   push:
-    paths:
-      - 'paper/**'
+#     paths:
+#       - 'paper/**'
 
 jobs:
   alpine:
@@ -14,9 +14,9 @@ jobs:
       - run: ls
       - uses: ./.github/actions/pandoc
         with:
-          name: ${{ workspace }}/paper/index.md
+          name: ${{ GITHUB_WORKSPACE }}/paper/index.md
           output: ./output/output.pdf
-          metadata: ${{ workspace }}/paper/_output.yaml
+          metadata: ${{ GITHUB_WORKSPACE }}/paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
           name: output

@@ -23,5 +23,5 @@ jobs:
           metadata: ./paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
-          name: output.pdf
-          path: ./output/output.pdf
+          name: output
+          path: ./output

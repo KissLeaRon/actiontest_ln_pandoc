@@ -1,18 +1,22 @@
-name: CI
+name: Document Conversion
 
-on: [push]
-
+on:
+  push:
+    paths:
+      - 'paper/**'
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  alpine:
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+#       - uses: actions/checkout@v1
+      - run: mkdir -p output
+      - run: ls
+#       - uses: ./.github/actions/pandoc
+#         with:
+#           name: ${{ workspace }}/paper/index.md
+#           output: ./output/output.pdf
+#           metadata: ${{ workspace }}/paper/_output.yaml
+#       - uses: actions/upload-artifact@master
+#         with:
+#           name: output
+#           path: output

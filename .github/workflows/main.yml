@@ -5,6 +5,7 @@ on:
 #     paths:
 #       - 'paper/**'
 
+
 jobs:
   alpine:
     runs-on: ubuntu-latest
@@ -17,10 +18,10 @@ jobs:
       - run: ls paper/ -a
       - uses: sakura067m/md2pdf@master
         with:
-          name: $GITHUB_WORKSPACE/paper/index.md
-          output: $GITHUB_WORKSPACE/output/output.pdf
-          metadata: $GITHUB_WORKSPACE/paper/_output.yaml
+          name: ./paper/index.md
+          output: ./output/output.pdf
+          metadata: ./paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
           name: output
-          path: output
+          path: ./output

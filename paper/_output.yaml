@@ -1,0 +1,40 @@
+title: "title"
+subtitle: "subtitle"
+author: "your name"
+date: "year年 month月"
+
+indent: true
+numbersections: true
+# standalone: true
+output:
+    pdf_document:
+        latex_engine: lualatex
+        pandoc_args: [
+        "--standalone",
+        "--top-level-division=chapter",
+        # "--filter=pandoc-crossref",
+        ]
+header-includes:
+    - \setlength{\fullwidth}{\textwidth}
+    - \usepackage{multirow}
+include-before:
+    - \frontmatter
+    - \tableofcontents
+    - \clearpage
+    - \listoffigures
+    - \clearpage
+    - \listoftables
+    - \clearpage
+    - \newpage
+    - \mainmatter
+papersize: A4
+# lang: ja
+fontsize: 11pt
+geometry: "left=27.27mm,right=27.27mm,top=22.72mm,bottom=22.72mm, includehead, includefoot"
+documentclass: ltjsbook
+# bibliography: bibliography.bib
+mainfont: IPAPMincho
+sansfont: IPAPGothic
+monofont: IPAGothic
+
+reference-section-title: 参考文献

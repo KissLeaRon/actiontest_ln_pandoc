@@ -15,7 +15,7 @@ jobs:
       - run: mkdir -p output
       - run: ls
       - run: ls paper/ -a
-      - uses: sakura067m/md2pdf@master
+      - uses: sakura067m/md2pdf@test
         with:
           name: $GITHUB_WORKSPACE/paper/index.md
           output: $GITHUB_WORKSPACE/output/output.pdf

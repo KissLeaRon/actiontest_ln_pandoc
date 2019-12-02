@@ -2,8 +2,8 @@ name: Document Conversion
 
 on:
   push:
-#     paths:
-#       - 'paper/**'
+    paths:
+      - 'paper/**'
 
 
 jobs:
@@ -23,5 +23,5 @@ jobs:
           metadata: ./paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
-          name: output
-          path: ./output
+          name: output.pdf
+          path: ./output/output.pdf

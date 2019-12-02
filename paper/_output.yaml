@@ -12,7 +12,7 @@ output:
         pandoc_args: [
         "--standalone",
         "--top-level-division=chapter",
-        # "--filter=pandoc-crossref",
+        "--filter=pandoc-crossref",
         ]
 header-includes:
     - \setlength{\fullwidth}{\textwidth}
@@ -32,7 +32,7 @@ papersize: A4
 fontsize: 11pt
 geometry: "left=27.27mm,right=27.27mm,top=22.72mm,bottom=22.72mm, includehead, includefoot"
 documentclass: ltjsbook
-# bibliography: bibliography.bib
+bibliography: bibliography.bib
 mainfont: IPAPMincho
 sansfont: IPAPGothic
 monofont: IPAGothic

@@ -13,11 +13,12 @@ jobs:
       - run: pwd
       - run: mkdir -p output
       - run: ls
+      - run: ls paper/ -a
       - uses: sakura067m/md2pdf@test
         with:
-          name: $GITHUB_WORKSPACE/paper/index.md
+          name: ./paper/index.md
           output: ./output/output.pdf
-          metadata: $GITHUB_WORKSPACE/paper/_output.yaml
+          metadata: ./paper/_output.yaml
       - uses: actions/upload-artifact@master
         with:
           name: output

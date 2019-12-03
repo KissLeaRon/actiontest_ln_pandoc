@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v1
       - run: mkdir -p output
       - id: md2pdf
-        uses: sakura067m/md2pdf@master
+        uses: sakura067m/md2pdf@develop
         with:
           pwd: paper
           name: index.md

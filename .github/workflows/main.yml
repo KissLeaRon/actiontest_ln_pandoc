@@ -11,17 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: echo $RUNNER_OS
-      - run: pwd
       - run: mkdir -p output
-      - run: ls
-      - run: ls paper/ -a
-      - uses: sakura067m/md2pdf@master
+      - id: md2pdf
+        uses: sakura067m/md2pdf@master
         with:
-          name: ./paper/index.md
-          output: ./output/output.pdf
-          metadata: ./paper/_output.yaml
+          pwd: paper
+          name: index.md
+          output: output/output.pdf
+          metadata: _output.yaml
       - uses: actions/upload-artifact@master
         with:
           name: output.pdf
-          path: ./output/output.pdf
+          path: ${{ jobs.md2pdf.outputs.path }}

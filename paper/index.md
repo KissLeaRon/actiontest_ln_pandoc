@@ -1,3 +1,3 @@
 ### pos
- - aina
- - suzuki
+ - Aina
+ - Suzuki
